@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+        <title> ExpenseTracker </title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Expense₹Tracker</a>
+        <a href="#news">Login</a>
+        <a href="#about">About Us</a>
+    </div>
+    <div class="page">
+      <div class="form">
+        <div class="signup">
+          <div class="header">
+            <h3>SIGN UP</h3>
+          </div>
+        </div>
+        <form class="form" method = "POST">
+            {% csrf_token %}
+            <input type="text" name = "username" placeholder="username" required>
+            <input type="text" name = "email" placeholder="email" required>
+            <input type="password" name = "password" placeholder="password" required>
+            <input type="password" name = "re_password" placeholder="re-enter password" required>
+             <button type = "submit">sign up</button>
+        </form>
+      </div>
+    </div>
+</body>
+</html>

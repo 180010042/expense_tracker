@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <title> ExpenseTracker </title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#home">Expense₹Tracker</a>
+            <a href="#news">Logout</a>
+            <a href="#about">About Us</a>
+        </div>
+        <div class="page" style = "margin: 0 20% 0">
+            <div class="form">
+                <div class="header">
+                    <h3>Add Transaction</h3>
+                </div>
+                <form class="form" style = "height: 330px" method = "POST" action = "/transaction_history">
+                    {% csrf_token %}
+                    <div class="transaction_col1">
+                    <div class = "input-fields">
+                        <label for="date">Date:</label>
+                        <input type = "date" name = "date" required> 
+                    </div>
+                    <div class = "input-fields">
+                        <select  name="type" required>
+                            <option value="Expense">Expense</option>
+                            <option value="Income">Income</option>
+                        </select>
+                    </div>
+                    <div class = "input-fields">
+                        <label for="note">Note:</label>
+                        <textarea name="message" rows="6" cols="30">
+                        </textarea>
+                    </div>
+                    </div>
+                    <div class = "transaction_col2">
+                    <div class = "input-fields">
+                        <label for="amount">Amount:</label>
+                        <input type = "number" name = "amount" required> 
+                    </div> 
+                    <div class = "input-fields" style = "width:50%; margin: 0px 15px">
+                        <label for="category">Category:</label>
+                        <select  name="category" placeholder = "category" required>
+                            <option value="volvo">Custom Category</option>
+                            <option value="volvo">Food</option>
+                            <option value="saab">Bills</option>
+                            <option value="fiat">Groceries</option>
+                            <option value="audi">Health</option>
+                            <option value="audi">Salary</option>
+                            <option value="audi">Other Income</option>
+                        </select>
+                    </div>
+                    <div class = "input-fields" style = "width:100%; margin: 0px 15px">
+                        <input type = "text" placeholder = "Type your custom category here.">
+                    </div> <br>
+                    <div class = "input-fields" style = "float: right; width: 40%; margin: 0px 15px">
+                        <button >ADD</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
